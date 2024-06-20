@@ -71,8 +71,12 @@ export const metadata = {
         url: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/favicon-32x32.png`,
       },
     ],
-  },
-  themeColor: "#EDF4F4",
+  }
+}
+
+export const viewport = {
+  width: 1,
+  themeColor: '#EDF4F4',
 }
 
 export default function RootLayout({

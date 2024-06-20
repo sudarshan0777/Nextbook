@@ -3,7 +3,7 @@
 import Link from "next/link"
 import BookRow from "@/components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { useCategories } from "@/store/server/categories/queries"
+// import { useCategories } from "@/store/server/categories/queries"
 import { Categories } from "@/store/server/categories/types"
 import { Books } from "@/store/server/books/types"
 
@@ -16,12 +16,18 @@ export default function CategoriesSection({
   categories,
   books,
 }: CategoriesSectionProps) {
-  const { data } = useCategories({ categories })
+  // const { data } = useCategories({ categories })
+
+  let data = [
+    {name: "New Arribes", slug: "new-arribes"},
+    {name: "Best Seller", slug: "best-seller"},
+    {name: "Novel", slug: "novel"}
+  ]
 
   return (
     <>
-      {data.length > 0 &&
-        data.map(({ name, slug }) => (
+      {data?.length > 0 &&
+        data?.map(({ name, slug }) => (
           <section key={slug} className="pb-6">
             <div className="flex items-baseline justify-between">
               <h2 className="font-serif text-2xl font-medium capitalize md:text-2xl">
